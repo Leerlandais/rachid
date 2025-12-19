@@ -1,0 +1,299 @@
+/* ========================= */
+/* CSS GÉNÉRAL (login non touché) */
+/* ========================= */
+
+body {
+    background-color: #0e172a;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.signInBox {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #27272a;
+}
+
+hr {
+    border-top: 1px solid #434446;
+    width: 100%;
+}
+
+.login-link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* Top bar fixe en haut       */
+/* ========================= */
+.topbar {
+    background: #1b263b;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #243447;
+}
+
+/* Bouton précédent */
+.topbar .back-btn {
+    font-size: 20px;
+    color: #40e0d0; /* turquoise clair */
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Container central pour titre + caddy */
+.topbar .center-container {
+    flex: 1; /* occupe tout l'espace entre la flèche et le bord droit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Titre */
+.topbar .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #40e0d0; /* turquoise clair */
+}
+
+/* Caddy */
+.topbar .cart {
+    font-size: 20px;
+    color: #40e0d0; /* turquoise clair */
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* ========================= */
+/* Sections principales      */
+/* ========================= */
+.section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 80px auto 0 auto; /* décale sous topbar */
+    text-align: left;
+}
+
+/* Titre des sections */
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #40e0d0; /* turquoise clair */
+    margin-left: 12px; /* aligné avec cartes */
+}
+
+/* ========================= */
+/* Grid des items (responsive et dynamique) */
+/* ========================= */
+.items-grid {
+    display: grid;
+    gap: 16px;
+    justify-content: start; /* alignement à gauche pour cohérence */
+    align-items: start;
+
+    /* Minwidth fixe pour cartes + largeur flexible pour s'adapter au nombre de cartes par ligne */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    max-width: 1200px;
+    margin: 0 auto 100px;
+}
+
+/* Responsive tablette */
+@media (max-width: 900px) {
+    .items-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+    .items-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+/* ========================= */
+/* Cartes des items          */
+/* ========================= */
+.item-card {
+    background: #1b263b;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+
+    box-sizing: border-box;
+    position: relative;
+
+    width: 100%;        /* toujours prendre tout l’espace disponible de la colonne */
+    max-width: 320px;   /* ne jamais dépasser cette largeur */
+    margin: 0;          /* alignement à gauche pour toutes les cartes */
+}
+
+/* Titre de l'item */
+.item-card h3 {
+    margin-top: 14px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Propriétaire / créateur */
+.owner {
+    margin: 0;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+/* Prix / Buy Now */
+.price {
+    color: #f4a261;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Enchère actuelle */
+.current-bid {
+    font-size: 13px;
+    color: #b8c1cd;
+}
+
+.current-bid span {
+    color: #2ecc71;
+}
+
+/* Temps restant */
+.time-left {
+    margin-top: 10px;
+    color: #4cbf6b;
+    font-size: 14px;
+}
+
+/* Image principale */
+.item-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #111;
+}
+
+/* Compteur des images */
+.img-count {
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Badges (Auction, Direct Sale, Best Bidder, etc.) */
+.badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.badge {
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-right: 4px;
+    display: inline-block;
+    color: white;
+}
+
+.bidder {
+    background: #6c757d;
+}
+
+.best {
+    background: #2ecc71;
+}
+
+.auction {
+    background: #f4a261;
+}
+
+.direct {
+    background: #3498db;
+}
+
+/* Marges internes des éléments de la carte */
+.item-card > * {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+/* ========================= */
+/* Barre de navigation bottom */
+/* ========================= */
+.navbar {
+    position: fixed;
+    bottom: 54px;
+    width: 100%;
+    background: #1b263b;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    border-top: 1px solid #243447;
+}
+
+/* Items de navigation */
+.nav-item {
+    color: #7d8fa8;
+    font-size: 14px;
+}
+
+.nav-item.active {
+    color: white;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* Barre horodatage           */
+/* ========================= */
+.timestamp {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #102030;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid #243447;
+    color: white;
+}
+
+/* Boutons de la barre horodatage */
+.time-btn, .reset {
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    background: #243447;
+    color: white;
+}
+
+/* Bouton reset */
+.reset {
+    background: #8b1e1e;
+}

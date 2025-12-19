@@ -1,0 +1,31 @@
+{% extends "template.html.twig" %}
+{% block sectionOne %}
+
+    <!-- Main content scrollable -->
+    <div class="content">
+
+        <?php include("_sectionOne.php"); ?>
+        <?php include("_sectionTwo.php"); ?>
+
+    </div>
+
+    <!-- Timestamp / bottom bars -->
+    <div class="timestamp">
+        <span class="showTime">🕒<?= $currentTime ?></span>
+        <form method="post">
+            <button type="submit" name="offsetBy" value="hour" class="time-btn">+1h</button>
+            <button type="submit" name="offsetBy" value="day" class="time-btn">+1d</button>
+            <button type="submit" name="offsetBy" value="week" class="time-btn">+1w</button>
+            <button type="submit" name="offsetBy" value="reset" class="reset">🔄 Reset</button>
+        </form>
+
+    </div>
+
+    <footer class="navbar">
+        <a href="#"><div class="nav-item">Browse</div></a>
+        <a href="#"><div class="nav-item">My Items</div></a>
+        <a href="#"><div class="nav-item">Add Offer</div></a>
+        <a href="#"><div class="nav-item">Profile</div></a>
+    </footer>
+
+{% endblock %}
