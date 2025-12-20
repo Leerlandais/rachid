@@ -11,7 +11,7 @@
 
     <!-- Timestamp / bottom bars -->
     <div class="timestamp">
-        <span class="showTime">🕒<?= $currentTime ?></span>
+        <span class="showTime">🕒 {{ currentTime }}</span>
         <form method="post">
             <button type="submit" name="offsetBy" value="hour" class="time-btn">+1h</button>
             <button type="submit" name="offsetBy" value="day" class="time-btn">+1d</button>

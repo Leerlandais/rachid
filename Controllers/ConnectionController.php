@@ -21,7 +21,7 @@ class ConnectionController extends Abstract\AbstractController
         parent::__construct($twig, $managerFactory);
         $this->connectionManager = $this->getManager(ConnectionManager::class);
     }
-    public function logout()
+    public function logout() : void
     {
         $this->connectionManager->logoutUser();
         header("Location: ./");
